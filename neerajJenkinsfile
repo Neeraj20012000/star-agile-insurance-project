@@ -12,3 +12,12 @@ pipeline {
                 git 'https://github.com/Neeraj20012000/star-agile-insurance-project.git'
               }
         }
+ stage('Package') {
+       steps {
+               echo 'Create a package'
+               sh 'mvn clean package'
+             }
+         }
+}
+}
+
