@@ -27,7 +27,8 @@ pipeline {
 tage('Create The Image Using Package') {
        steps {
                echo 'Create a docker image from the package'
-               sh 'docker build -t  Neeraj20012000/star-agile-insurance-project .'
+                sh 'docker build -t Neeraj20012000/insure_me:1.0 .'
+
              }
         }
 
