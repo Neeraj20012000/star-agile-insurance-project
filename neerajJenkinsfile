@@ -31,6 +31,21 @@ stage('Create The Image Using Package') {
 
              }
         }
+stage('Docker Login') {
+       steps {
+               echo 'Login to docker hub to push image'
+               withCredentials([usernamePassword(credentialsId: 'Dockerlogin-user', passwordVariable: 'Dockerpass', usernameVariable: 'Dockerlogin')]) {
+                        sh 'docker login -u ${Dokerlogin} -p ${Dockerpassword}'
+                }
+             }
+        }
+stage('Push The Image') {
+       steps {
+               echo 'Push docker image to dockerhub'
+               sh 'docker push mishra2211/myimages:1.0'
+             }
+        }
+
 
 
 }
