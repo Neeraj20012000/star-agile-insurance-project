@@ -39,12 +39,7 @@ stage('Docker Login') {
                 }
              }
         }
-stage('Push The Image') {
-       steps {
-               echo 'Push docker image to dockerhub'
-               sh 'docker push mishra2211/myimages:1.0'
-             }
-        }
+
 
 
 
