@@ -24,6 +24,13 @@ pipeline {
                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/InsureProject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
              }
         }
+tage('Create The Image Using Package') {
+       steps {
+               echo 'Create a docker image from the package'
+               sh 'docker build -t  Neeraj20012000/star-agile-insurance-project .'
+             }
+        }
+
 
 }
 }
