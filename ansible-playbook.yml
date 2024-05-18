@@ -16,5 +16,5 @@
     become : yes
     become_user : root
 
-  - name: Deploy the image and Run as  Container
+  - name: Deploy the Image and Run as  Container
     command: docker run -itd -p 8084:8081 mishra2211/myimages:1.0
