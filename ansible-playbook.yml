@@ -1,13 +1,13 @@
-- name : Docker configure in Ec2 Machine
+- name :  Configure Docker on Ec2 Machine
   hosts : all
   become: true
   connection : ssh
   tasks : 
   - name: updating the New Ec2 Machine
-    command : sudo apt-get update
+    command : sudo yum update
 
   - name : Install Docker
-    command : sudo apt install -y docker.io
+    command : sudo yum install -y docker.io
     become : yes
     become_user : root
 
