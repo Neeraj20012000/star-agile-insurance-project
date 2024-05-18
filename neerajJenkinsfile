@@ -51,8 +51,8 @@ stage('Push The Image') {
                echo 'Deploy app using ansible'
                ansiblePlaybook credentialsId: 'ssh-user', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml', vaultTmpPath: ''
              }
-        }
+                }
 
-}
+                   }
 }
 
