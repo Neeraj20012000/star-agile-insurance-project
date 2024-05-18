@@ -46,8 +46,12 @@ stage('Push The Image') {
                sh 'docker push mishra2211/myimages:1.0'
              }
         }
-
-
+ stage('Deploy Using Ansible') {
+       steps {
+               echo 'Deploy app using ansible'
+               ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml', vaultTmpPath: ''
+             }
+        }
 
 }
 }
